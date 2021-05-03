@@ -10,6 +10,7 @@ import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import RenderProps from './pages/RenderProps';
 import SignupForm from './pages/SignupForm';
+import ContextExample from './pages/ContextExample';
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
             <li>
               <Link to="/renderprop">Render Props</Link>
             </li>
+            <li>
+              <Link to="/context">Context</Link>
+            </li>
           </ul>
         </nav>
 
@@ -51,6 +55,9 @@ function App() {
           </Route>
           <Route path="/renderprop">
              <RenderProps/>
+          </Route>
+          <Route path="/context">
+             <ContextExample/>
           </Route>
           <Route path="/">
               Hello world

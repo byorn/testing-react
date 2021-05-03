@@ -6,9 +6,10 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Page1 from './Page1';
-import Page2 from './Page2';
-import RenderProps from './RenderProps';
+import Page1 from './pages/Page1';
+import Page2 from './pages/Page2';
+import RenderProps from './pages/RenderProps';
+import SignupForm from './pages/SignupForm';
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
               <Link to="/page2">Page2</Link>
             </li>
             <li>
+              <Link to="/formik">formik</Link>
+            </li>
+            <li>
               <Link to="/renderprop">Render Props</Link>
             </li>
           </ul>
@@ -41,6 +45,9 @@ function App() {
           </Route>
           <Route path="/page2">
              <Page2/>
+          </Route>
+          <Route path="/formik">
+             <SignupForm/>
           </Route>
           <Route path="/renderprop">
              <RenderProps/>

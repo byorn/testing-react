@@ -11,6 +11,7 @@ import Page2 from './pages/Page2';
 import RenderProps from './pages/RenderProps';
 import SignupForm from './pages/SignupForm';
 import ContextExample from './pages/ContextExample';
+import NestedRouting from './pages/NestedRouting';
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
             <li>
               <Link to="/context">Context</Link>
             </li>
+            <li>
+              <Link to="/nestedrouting">Nested Routing</Link>
+            </li>
           </ul>
         </nav>
 
@@ -58,6 +62,9 @@ function App() {
           </Route>
           <Route path="/context">
              <ContextExample/>
+          </Route>
+          <Route path="/nestedrouting">
+             <NestedRouting/>
           </Route>
           <Route path="/">
               Hello world

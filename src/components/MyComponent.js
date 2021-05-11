@@ -5,7 +5,7 @@ const MyComponent = (props) => {
     const state =  useContext(MyReactContext);
   
     return(
-            <div>My Component 1 {state.address} </div>
+            <div>My Component 1 {state && state.address} </div>
     )
 }
 

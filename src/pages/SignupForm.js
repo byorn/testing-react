@@ -1,20 +1,32 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
+import ButtonToolBar from '../components/ButtonToolBar'
 
 const SignupForm = () => {
+
+   const [formInitialState, setFormInitState] = useState({});
+   const [initialValue, setInitialValue] = useState(false);
+
+    useEffect(()=>{
+
+        axios.get('http://localhost:3000/people') .then(response => { setFormInitState(response.data[response.data.length-1]);});
+        setInitialValue(true);
+    },[])
+
+    const saveData = (data, formik) => {
+      axios.post('http://localhost:3000/people',data={...data,id:parseInt(data.id)+1}) .then(response => { console.log(response.data); formik.resetForm({values:response.data});});
+      
+    }
+
+    console.log(formInitialState);
     return (
       <>
         <h1>Subscribe!</h1>
         <Formik
-          initialValues={{
-            firstName: '',
-            lastName: '',
-            email: '',
-            jack: '',
-            acceptedTerms: false, // added for our checkbox
-            jobType: '', // added for our select
-          }}
+          enableReinitialize
+          initialValues={formInitialState}
           validationSchema={Yup.object({
             firstName: Yup.string()
               .max(15, 'Must be 15 characters or less')
@@ -25,15 +37,6 @@ const SignupForm = () => {
             email: Yup.string()
               .email('Invalid email address')
               .required('Required'),
-            acceptedTerms: Yup.boolean()
-              .required('Required')
-              .oneOf([true], 'You must accept the terms and conditions.'),
-            jobType: Yup.string()
-              .oneOf(
-                ['designer', 'development', 'product', 'other'],
-                'Invalid Job Type'
-              )
-              .required('Required'),
           })}
           onSubmit={(values, { setSubmitting }) => {
             setTimeout(() => {
@@ -42,7 +45,13 @@ const SignupForm = () => {
             }, 400);
           }}
         >
+          {
+          (formik) => {
+            console.log("dirty" + formik.dirty);
+            return (
               <Form>
+                <ButtonToolBar initialValue={false} dirty={formik.dirty} onSave={()=>saveData(formik.values,formik)} onCalculate={()=>saveData(formik.values,formik)} />
+                <br/><br/>
                 <label htmlFor="firstName">First Name</label>
                 <Field name="firstName" type="text" />
                 <ErrorMessage name="firstName" />
@@ -55,13 +64,11 @@ const SignupForm = () => {
                 <Field name="email" type="email" />
                 <ErrorMessage name="email" />
                 <br/>
-        
-                <br/>
-                <br/>
-
-                <Field name="jack" type="text" />
-                <button type="submit">Submit</button>
-          </Form>
+      
+            </Form>
+            )
+        }
+        }
         </Formik>
       </>
     );

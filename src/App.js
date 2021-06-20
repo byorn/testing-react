@@ -7,7 +7,7 @@ import {
   Link
 } from "react-router-dom";
 import Page1 from './pages/Page1';
-import Page2 from './pages/Page2';
+import UseReducerDemo from './pages/UseReducerDemo';
 import RenderProps from './pages/RenderProps';
 import SignupForm from './pages/SignupForm';
 import ContextExample from './pages/ContextExample';
@@ -28,7 +28,7 @@ function App() {
               <Link to="/page1">Page1</Link>
             </li>
             <li>
-              <Link to="/page2">Page2</Link>
+              <Link to="/useReducer">UseReducerDemo</Link>
             </li>
             <li>
               <Link to="/formik">formik</Link>
@@ -51,8 +51,8 @@ function App() {
           <Route path="/page1">
               <Page1/>
           </Route>
-          <Route path="/page2">
-             <Page2/>
+          <Route path="/useReducer">
+             <UseReducerDemo/>
           </Route>
           <Route path="/formik">
              <SignupForm/>

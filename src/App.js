@@ -7,11 +7,12 @@ import {
   Link
 } from "react-router-dom";
 import Page1 from './pages/Page1';
-import UseReducerDemo from './pages/UseReducerDemo';
+import ReducerExample from './pages/ReducerExample';
 import RenderProps from './pages/RenderProps';
 import SignupForm from './pages/SignupForm';
 import ContextExample from './pages/ContextExample';
 import NestedRouting from './pages/NestedRouting';
+import CodeReusePattern from './pages/CodeReusePattern';
 
 function App() {
   return (
@@ -40,6 +41,9 @@ function App() {
               <Link to="/context">Context</Link>
             </li>
             <li>
+              <Link to="/codereuse">Code Reuse Patterns</Link>
+            </li>
+            <li>
               <Link to="/nestedrouting">Nested Routing</Link>
             </li>
           </ul>
@@ -52,7 +56,7 @@ function App() {
               <Page1/>
           </Route>
           <Route path="/useReducer">
-             <UseReducerDemo/>
+             <ReducerExample/>
           </Route>
           <Route path="/formik">
              <SignupForm/>
@@ -62,6 +66,9 @@ function App() {
           </Route>
           <Route path="/context">
              <ContextExample/>
+          </Route>
+          <Route path="/codereuse">
+             <CodeReusePattern/>
           </Route>
           <Route path="/nestedrouting">
              <NestedRouting/>

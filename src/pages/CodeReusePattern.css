@@ -1,0 +1,16 @@
+.border-class{
+    border: 1px solid brown;
+    margin: 2px;
+}
+.xcomp {
+        background: red;
+        width: 10%;
+        margin-left: 50%;
+
+}
+
+.ycomp {
+    background:blue;
+    width: 10%;
+    margin-left: 50%;
+}

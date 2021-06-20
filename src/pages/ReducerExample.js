@@ -8,7 +8,7 @@ const counterReducer = (state, action)=>{
     }
 }
 
-const UseReducerDemo = () => {
+const ReducerExample = () => {
 
   
     const initialState = { counter: 0 };
@@ -19,4 +19,4 @@ const UseReducerDemo = () => {
     <button onClick={()=>dispatch({type:'INCREMENT'})} > increment </button>
     </div>
 }
-export default UseReducerDemo;
+export default ReducerExample;

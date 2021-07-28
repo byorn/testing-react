@@ -13,6 +13,7 @@ import SignupForm from './pages/SignupForm';
 import ContextExample from './pages/ContextExample';
 import NestedRouting from './pages/NestedRouting';
 import CodeReusePattern from './pages/CodeReusePattern';
+import TestingThis from './components/TestingThis';
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             <li>
               <Link to="/nestedrouting">Nested Routing</Link>
             </li>
+            <li>
+              <Link to="/testingthis">Testing This Keyword</Link>
+            </li>
           </ul>
         </nav>
 
@@ -72,6 +76,9 @@ function App() {
           </Route>
           <Route path="/nestedrouting">
              <NestedRouting/>
+          </Route>
+          <Route path="/testingthis">
+             <TestingThis/>
           </Route>
           <Route path="/">
               Hello world

@@ -15,6 +15,7 @@ import ContextExample2 from './pages/ContextExample2';
 import NestedRouting from './pages/NestedRouting';
 import CodeReusePattern from './pages/CodeReusePattern';
 import TestingThis from './components/TestingThis';
+import TestingWindowEvents from './components/TestingWindowEvents';
 
 function App() {
   return (
@@ -54,6 +55,9 @@ function App() {
             <li>
               <Link to="/testingthis">Testing This Keyword</Link>
             </li>
+            <li>
+              <Link to="/testingwindowevents">Testing Window Events</Link>
+            </li>
           </ul>
         </nav>
 
@@ -86,6 +90,9 @@ function App() {
           </Route>
           <Route path="/testingthis">
              <TestingThis/>
+          </Route>
+          <Route path="/testingwindowevents">
+             <TestingWindowEvents/>
           </Route>
           <Route path="/">
               Hello world

@@ -5,8 +5,8 @@ const MyComponent = (props) => {
     const state =  useContext(MyReactContext);
   
     return(
-            <div>My Component 1 {state && state.address} </div>
+            <div>My Component  {state && state.address} </div>
     )
 }
 
-export default MyComponent;<div>My Component 1</div>
+export default MyComponent;

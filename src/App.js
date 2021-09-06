@@ -11,6 +11,7 @@ import ReducerExample from './pages/ReducerExample';
 import RenderProps from './pages/RenderProps';
 import SignupForm from './pages/SignupForm';
 import ContextExample from './pages/ContextExample';
+import ContextExample2 from './pages/ContextExample2';
 import NestedRouting from './pages/NestedRouting';
 import CodeReusePattern from './pages/CodeReusePattern';
 import TestingThis from './components/TestingThis';
@@ -42,6 +43,9 @@ function App() {
               <Link to="/context">Context</Link>
             </li>
             <li>
+              <Link to="/context2">Context 2</Link>
+            </li>
+            <li>
               <Link to="/codereuse">Code Reuse Patterns</Link>
             </li>
             <li>
@@ -70,6 +74,9 @@ function App() {
           </Route>
           <Route path="/context">
              <ContextExample/>
+          </Route>
+          <Route path="/context2">
+             <ContextExample2/>
           </Route>
           <Route path="/codereuse">
              <CodeReusePattern/>
